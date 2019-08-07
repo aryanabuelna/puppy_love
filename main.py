@@ -20,24 +20,45 @@ class HomePageHandler(webapp2.RequestHandler):
         
 class UserProfileHandler(webapp2.RequestHandler):
     def get(self):
-       signup_template = the_jinja_env.get_template('templates/sign_up.html')
-        
-    #   pro_pic = self.request.get('profile_pic')
-       animal_name = self.request.get('user_pet_name')
-       a_type = self.request.get('animal-type')
-       location = self.request.get('state_location')
-       c_info = self.request.get('user_contact_info')
-       a_bio = self.request.get('user_bio')
-    
-    #   run_query(pro_pic, animal_name, a_type, location, c_info, a_bio)
        
        signup_template = the_jinja_env.get_template('templates/sign_up.html')
        self.response.write(signup_template.render())
 
+class ResultsHandler(webapp2.RequestHandler):
+    def post(self):
+        results_template = the_jinja_env.get_template('templates/results.html')
+      
+        animal_name = self.request.get('user_pet_name')
+        c_info = self.request.get('user_contact_info')
+        a_bio = self.request.get('user_bio')
+        location = self.request.get('city_location')
+        
+        pic_type_choice = self.request.get('animal-type')
+        if pic_type_choice == 'dog':
+            pro_pic = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpXf5XHQ9kgHbMrm0UDsGfdnLpY0eCImg8NsbLrEPBemBjHXR-pg'
+        elif pic_type_choice == 'cat':
+            pro_pic = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX2GdKFh11u7YQKsF9zrFqO1XqiLPkE9sGhGWWZEEs5hBjlXwb'
+        elif pic_type_choice == 'bird':
+            pro_pic = 'https://s3.amazonaws.com/iconbros/icons/icon_pngs/000/000/647/original/bird.png?1512755589'
+        elif pic_type_choice == 'small_pet':
+            pro_pic = 'https://png.pngtree.com/svg/20161120/b19f2ce58b.svg'
+        elif pic_type_choice == 'reptile':
+            pro_pic = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAQEBUeSIahIzR0ojOYIQPWSu0gfKiBPqh0HOeJuyjZP2U2df2Og'
+            
+        the_variable_dict = {
+            "img_pic": pro_pic,
+            "username": animal_name,
+            "t_o_animal": pic_type_choice,
+            "place": location,
+            "contacting": c_info,
+            "_bio_": a_bio,
+        }
+      
+        self.response.write(results_template.render(the_variable_dict))
 
 app = webapp2.WSGIApplication([
     ('/', HomePageHandler),
-    ('/signup', UserProfileHandler ),
-    ('/results'), 
+    ('/signup', UserProfileHandler),
+    ('/results', ResultsHandler),
     
 ], debug=True)
