@@ -75,11 +75,31 @@ class AllProfilesHandler(webapp2.RequestHandler):
         
         self.response.write(all_profiles_template.render(the_variable_dict))
         
+def clear_userprofiles():
+    
+        all_profiles = User_Profile.query().fetch()
+        
+        for entity in all_profiles:
+            entity.key.delete()
+            
+class ClearDBHandler(webapp2.RequestHandler):
+    
+    def get(self):
+        clear_userprofiles()
+        self.response.write("Database cleared.")
 
+class SeedDBHandler(webapp2.RequestHandler):
+    
+    def get(self):
+        run_query("fluffy","dog",'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpXf5XHQ9kgHbMrm0UDsGfdnLpY0eCImg8NsbLrEPBemBjHXR-pg',"Salinas","1234567","blah blah blaqh")
+        run_query("cat name","cat",'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX2GdKFh11u7YQKsF9zrFqO1XqiLPkE9sGhGWWZEEs5hBjlXwb',"Salinas","56789","aieufefiusiefiheifsiehfih blah blaqh")
+        
 app = webapp2.WSGIApplication([
     ('/', HomePageHandler),
     ('/signup', UserProfileHandler),
     ('/results', ResultsHandler),
     ('/search', AllProfilesHandler),
+    ('/cleardatabase', ClearDBHandler),
+     ('/seeddatabase', SeedDBHandler)
     
 ], debug=True)

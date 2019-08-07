@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Profile Search</title>
+    </head>
+    
+    <body>
+        <h1>Profiles</h1>
+   <div id="container">
+    {% for profile in all_profiles %}
+    
+         <div>
+          <img src="{{profile.p_pic}}"></img>
+          <h1 id="pet_name">{{profile.pet_name}}</h1>
+          <h2>{{profile.a_typel}}</h2>
+          <h3>{{profile.location}}</h3>
+          <h3>{{profile.contact_info}}</h3>
+          <h4>{{profile.bio}}</h4>
+            
+          
+        </div>
+        <br> <br>
+
+    
+    {% endfor %}
+    
+   </div>
+    </body>
+
+</html>
