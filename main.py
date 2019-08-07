@@ -12,6 +12,12 @@ def run_query(prof_pic, name, animal, loc, contact, bio_):
     animal_prof = User_Profile(pet_name = name,animal_type = animal,location = loc, contact_info = contact, bio = bio_)
     prof_key = animal_prof.put()
     
+class HomePageHandler(webapp2.RequestHandler):
+    def get(self):
+        self.response.write('please work!')
+        # home_page = the_jinja_env.get_template('templates/home.html')
+        # self.response.write(home_page)
+        
 class UserProfileHandler(webapp2.RequestHandler):
     def get(self):
        signup_template = the_jinja_env.get_template('templates/sign_up.html')
@@ -23,14 +29,15 @@ class UserProfileHandler(webapp2.RequestHandler):
        c_info = self.request.get('user_contact_info')
        a_bio = self.request.get('user_bio')
     
-       run_query(pro_pic, animal_name, a_type, location, c_info, a_bio)
+    #   run_query(pro_pic, animal_name, a_type, location, c_info, a_bio)
        
        signup_template = the_jinja_env.get_template('templates/sign_up.html')
        self.response.write(signup_template.render())
 
 
 app = webapp2.WSGIApplication([
-    ('/signup', UserProfileHandler )
+    ('/', HomePageHandler),
+    ('/signup', UserProfileHandler ),
+    ('/results'), 
     
-    
-    ], debug=True)
+], debug=True)
