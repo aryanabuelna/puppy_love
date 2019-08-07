@@ -8,8 +8,9 @@ the_jinja_env = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
     
-def run_query(prof_pic, name, animal, loc, contact, bio_):
-    animal_prof = User_Profile(pet_name = name,animal_type = animal,location = loc, contact_info = contact, bio = bio_)
+    
+def run_query(name, animal, pic, loc, contact, bio_):
+    animal_prof = User_Profile(pet_name = name, a_type = animal, p_pic = pic, location = loc, contact_info = contact, bio = bio_)
     prof_key = animal_prof.put()
     
 class HomePageHandler(webapp2.RequestHandler):
@@ -25,7 +26,9 @@ class UserProfileHandler(webapp2.RequestHandler):
        self.response.write(signup_template.render())
 
 class ResultsHandler(webapp2.RequestHandler):
+   
     def post(self):
+       
         results_template = the_jinja_env.get_template('templates/results.html')
       
         animal_name = self.request.get('user_pet_name')
@@ -45,20 +48,38 @@ class ResultsHandler(webapp2.RequestHandler):
         elif pic_type_choice == 'reptile':
             pro_pic = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAQEBUeSIahIzR0ojOYIQPWSu0gfKiBPqh0HOeJuyjZP2U2df2Og'
             
+
+        run_query(animal_name,pic_type_choice,pro_pic,location,c_info,a_bio)
+            
         the_variable_dict = {
-            "img_pic": pro_pic,
             "username": animal_name,
-            "t_o_animal": pic_type_choice,
-            "place": location,
             "contacting": c_info,
             "_bio_": a_bio,
+            "place": location,
+            "t_o_animal": pic_type_choice,
+            "img_pic": pro_pic,
         }
       
         self.response.write(results_template.render(the_variable_dict))
+        
+class AllProfilesHandler(webapp2.RequestHandler):
+    def get(self):
+        
+        all_profiles_template = the_jinja_env.get_template('templates/all_profiles.html')
+        
+        all_profiles = User_Profile.query().fetch()
+        
+        the_variable_dict = {
+            'all_pet_profiles': all_profiles
+        }
+        
+        self.response.write(all_profiles_template.render(the_variable_dict))
+        
 
 app = webapp2.WSGIApplication([
     ('/', HomePageHandler),
     ('/signup', UserProfileHandler),
     ('/results', ResultsHandler),
+    ('/search', AllProfilesHandler),
     
 ], debug=True)
