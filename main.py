@@ -31,33 +31,33 @@ class ResultsHandler(webapp2.RequestHandler):
        
         results_template = the_jinja_env.get_template('templates/results.html')
       
-        animal_name = self.request.get('user_pet_name')
-        c_info = self.request.get('user_contact_info')
-        a_bio = self.request.get('user_bio')
+        pet_name = self.request.get('user_pet_name')
+        contact_info = self.request.get('user_contact_info')
+        bio = self.request.get('user_bio')
         location = self.request.get('city_location')
         
-        pic_type_choice = self.request.get('animal-type')
-        if pic_type_choice == 'dog':
-            pro_pic = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpXf5XHQ9kgHbMrm0UDsGfdnLpY0eCImg8NsbLrEPBemBjHXR-pg'
-        elif pic_type_choice == 'cat':
-            pro_pic = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX2GdKFh11u7YQKsF9zrFqO1XqiLPkE9sGhGWWZEEs5hBjlXwb'
-        elif pic_type_choice == 'bird':
-            pro_pic = 'https://s3.amazonaws.com/iconbros/icons/icon_pngs/000/000/647/original/bird.png?1512755589'
-        elif pic_type_choice == 'small_pet':
-            pro_pic = 'https://png.pngtree.com/svg/20161120/b19f2ce58b.svg'
-        elif pic_type_choice == 'reptile':
-            pro_pic = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAQEBUeSIahIzR0ojOYIQPWSu0gfKiBPqh0HOeJuyjZP2U2df2Og'
+        a_type = self.request.get('animal-type')
+        if a_type == 'dog':
+            p_pic = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpXf5XHQ9kgHbMrm0UDsGfdnLpY0eCImg8NsbLrEPBemBjHXR-pg'
+        elif a_type == 'cat':
+            p_pic = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX2GdKFh11u7YQKsF9zrFqO1XqiLPkE9sGhGWWZEEs5hBjlXwb'
+        elif a_type == 'bird':
+            p_pic = 'https://s3.amazonaws.com/iconbros/icons/icon_pngs/000/000/647/original/bird.png?1512755589'
+        elif a_type == 'small_pet':
+            p_pic = 'https://png.pngtree.com/svg/20161120/b19f2ce58b.svg'
+        elif a_type == 'reptile':
+            p_pic = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAQEBUeSIahIzR0ojOYIQPWSu0gfKiBPqh0HOeJuyjZP2U2df2Og'
             
 
-        run_query(animal_name,pic_type_choice,pro_pic,location,c_info,a_bio)
+        run_query(pet_name,a_type,p_pic,location,contact_info,bio)
             
         the_variable_dict = {
-            "username": animal_name,
-            "contacting": c_info,
-            "_bio_": a_bio,
+            "username": pet_name,
+            "contacting": contact_info,
+            "_bio_": bio,
             "place": location,
-            "t_o_animal": pic_type_choice,
-            "img_pic": pro_pic,
+            "t_o_animal": a_type,
+            "img_pic": p_pic,
         }
       
         self.response.write(results_template.render(the_variable_dict))
@@ -70,7 +70,7 @@ class AllProfilesHandler(webapp2.RequestHandler):
         all_profiles = User_Profile.query().fetch()
         
         the_variable_dict = {
-            'all_pet_profiles': all_profiles
+            'all_profiles': all_profiles
         }
         
         self.response.write(all_profiles_template.render(the_variable_dict))
