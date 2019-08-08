@@ -24,6 +24,7 @@
           grid-gap: 10px;
           /*background-color: #2196F3;*/
           padding: 10px;
+          padding-top:150px;
         }
         
         /*.grid-container > div {*/
@@ -32,7 +33,12 @@
         /*  padding: 20px 0;*/
         /*  font-size: 30px;*/
         /*}*/
-        
+        .item1 {
+                position:fixed;
+                width:100%;
+                top:0%;
+            
+        }
         .item8 {
             
           left: 10px;
@@ -46,6 +52,47 @@
               margin-left: auto;
               margin-right: auto;
         }
+        
+        .home{
+          border-right: 1px solid black;
+        }
+        
+        .about{
+          border-right: 1px solid black;
+         
+        }
+        
+        ul {
+              list-style-type: none;
+              margin: 0;
+              padding: 0;
+              background-color: #fefefe;
+        }
+        
+        li {
+          float: right;
+          padding: 20px 0px;
+        }
+        
+        li a {
+          display: block;
+          color: black;
+          text-align: center;
+          padding: 5px 16px;
+          text-decoration: none;
+          font-family: georgia;
+        }
+        
+        li a:hover {
+          background-color: #FFA06F;
+        }
+        
+        .buttonss {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+       
         </style>
                 
         
@@ -58,8 +105,8 @@
             <div class="item1">
                 <ul>
                 <img class="logo" src="images/logo.jpg" width="170PX">
-                  <li><a class="/signup" href="sign_up.html">Sign Up </a></li>
-                  <li><a class="/about" href="about.html">About</a></li>
+                  <li><a class="sign_up" href="/signup">Sign Up </a></li>
+                  <li><a class="about" href="/about">About</a></li>
                   <li><a class='home' href="/">Home</a></li>
                 </ul>
             </div>
@@ -73,7 +120,7 @@
             </div>
             
             <div class="item4">
-                {{t_o_animal}
+                {{t_o_animal}}
             </div>
             
             <div class="item5">
@@ -89,7 +136,7 @@
             </div>
             
             <div class="item8">
-                footer
+                <input class='buttonss' type='submit' value="Fetch Your Match!">
             </div>
             
         </div>
