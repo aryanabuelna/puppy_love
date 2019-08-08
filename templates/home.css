@@ -10,7 +10,7 @@ body{
   
 }
 
-.sign_up{
+.home{
   border-right: 1px solid black;
 }
 
@@ -58,24 +58,23 @@ p{
 }
 
 
-.column {
-  float: left;
-  width: 50%;
- box-sizing: border-box;
-  
-}
+/*.column {*/
+/*  float: left;*/
+/*  width: 50%;*/
+/*}*/
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-h2{
-  text-align: center
-}
-#table1 {
-  border-collapse: separate;
-  border-spacing: 15px;}
+
+/*.row:after {*/
+/*  content: "";*/
+/*  display: table;*/
+/*  clear: both;*/
+/*}*/
+/*h2{*/
+/*  text-align: center*/
+/*}*/
+/*#table1 {*/
+/*  border-collapse: separate;*/
+/*  border-spacing: 15px;}*/
 
 
 
