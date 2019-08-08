@@ -3,8 +3,18 @@ api_version: 1
 threadsafe: true
 
 handlers:
+- url: /css
+  static_dir: css
+  
+- url: /images
+  static_dir: images
+  
 - url: /.*
   script: main.app
+  
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
   
 libraries:
 - name: webapp2
