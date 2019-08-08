@@ -15,9 +15,13 @@ def run_query(name, animal, pic, loc, contact, bio_):
     
 class HomePageHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('please work!')
-        # home_page = the_jinja_env.get_template('templates/home.html')
-        # self.response.write(home_page)
+        home_template = the_jinja_env.get_template('templates/home.html')
+        self.response.write(home_template.render())
+        
+class AboutPageHandler(webapp2.RequestHandler):
+    def get(self):
+        about_template = the_jinja_env.get_template('templates/about.html')
+        self.response.write(about_template.render())
         
 class UserProfileHandler(webapp2.RequestHandler):
     def get(self):
@@ -96,6 +100,7 @@ class SeedDBHandler(webapp2.RequestHandler):
         
 app = webapp2.WSGIApplication([
     ('/', HomePageHandler),
+    ('/about', AboutPageHandler),
     ('/signup', UserProfileHandler),
     ('/results', ResultsHandler),
     ('/search', AllProfilesHandler),
