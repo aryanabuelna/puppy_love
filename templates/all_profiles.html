@@ -9,7 +9,7 @@
     <body>
        <div class="header">
             <ul>
-            <img class="logo" src="images/logo.jpg" width="170PX">
+            <img class="logo" src="images/logo.jpg" width="170PX"></img>
               <li><a href="home.html">Home</a></li>
               <li><a class="about" href="about.html">About</a></li>
               <li><a class="sign_up" href="sign_up.html">Sign Up </a></li>
@@ -22,8 +22,8 @@
    <div id="container">
     {% for profile in all_profiles %}
     
-         <div>
-          <img src="{{profile.p_pic}}" width = "50%"></img>
+        <div>
+          <img src="{{profile.p_pic}}" width = "50%" ></img>
           <h1 id="pet_name">{{profile.pet_name}}</h1>
           <h2>{{profile.a_typel}}</h2>
           <h3>{{profile.location}}</h3>
