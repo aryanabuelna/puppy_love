@@ -105,6 +105,6 @@ app = webapp2.WSGIApplication([
     ('/results', ResultsHandler),
     ('/search', AllProfilesHandler),
     ('/cleardatabase', ClearDBHandler),
-     ('/seeddatabase', SeedDBHandler)
+    ('/seeddatabase', SeedDBHandler)
     
 ], debug=True)
