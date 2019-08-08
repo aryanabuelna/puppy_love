@@ -1,0 +1,26 @@
+body {
+ margin: 0px;
+}
+#header {
+ color: white;
+ background-color: #4a75e6;
+ font-size: 20px;
+ height: 200px;
+ margin: 0px;
+ padding-top: 3%;
+ text-align: center;
+ width: 100%;
+}
+#links {
+ background-color: #Febc1f;
+ height: 50px;
+ text-align: center;
+}
+.link {
+ color: grey;
+ display: inline-block;
+ font-weight: bold;
+ margin-left: 10%;
+ margin-right: 10%;
+ margin-top: 2%;
+}
