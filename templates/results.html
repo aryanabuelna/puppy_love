@@ -1,21 +1,103 @@
 <!DOCTYPE html>
 <html>
-    <head> 
-        <title>Your Profile!</title>
+    <head>
+        <style>
+        
+        .item1 { grid-area: header; }
+        .item2 { grid-area: img; }
+        .item3 { grid-area: name; }
+        .item4 { grid-area: type; }
+        .item5 { grid-area: bio; }
+        .item6 { grid-area: loc;}
+        .item7 { grid-area: con;}
+        .item8 { grid-area: footer;}
+        
+        
+        .grid-container {
+          display: grid;
+          grid-template-areas:
+          'header header header header header header'
+          'img img name name type type'
+          'img img loc loc con con'
+          'img img bio bio bio bio'
+          'footer footer footer footer footer footer';
+          grid-gap: 10px;
+          /*background-color: #2196F3;*/
+          padding: 10px;
+        }
+        
+        /*.grid-container > div {*/
+        /*  background-color: rgba(255, 255, 255, 0.8);*/
+        /*  text-align: center;*/
+        /*  padding: 20px 0;*/
+        /*  font-size: 30px;*/
+        /*}*/
+        
+        .item8 {
+            
+          left: 10px;
+          bottom: 10px;
+          width: 100%;
+          background-color:#FFA06F;
+          
+        }
+        .cactusimg {
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+        }
+        </style>
+                
+        
+        
+        <link rel="stylesheet" href="home.css">
+        <title> Your Profile! </title>
     </head>
     <body>
-       
-        <img src="{{img_pic}}"></img>
-        <h1>{{username}}</h1>
-        <h2>{{t_o_animal}}</h2>
-        <h3>{{place}}</h3>
-        <h3>{{contacting}}</h3>
-        <h4>{{_bio_}}</h4>
-        
-        <form method=GET action= '/search'>
-            <input type="submit" value="Fetch Your Match!">
-        </form>
-   
+        <div class="grid-container">
+            <div class="item1">
+                <ul>
+                <img class="logo" src="images/logo.jpg" width="170PX">
+                  <li><a class="/signup" href="sign_up.html">Sign Up </a></li>
+                  <li><a class="/about" href="about.html">About</a></li>
+                  <li><a class='home' href="/">Home</a></li>
+                </ul>
+            </div>
+            
+            <div class="item2">
+                <img class="cactusimg" src="images/Cactus.png" width="300px" height="300px">
+            </div>
+            
+            <div class="item3">
+                {{username}}
+            </div>
+            
+            <div class="item4">
+                {{t_o_animal}
+            </div>
+            
+            <div class="item5">
+                {{bio}}
+            </div>
+            
+            <div class="item6">
+                {{place}}
+            </div>
+            
+            <div class="item7">
+                {{contacting}}
+            </div>
+            
+            <div class="item8">
+                footer
+            </div>
+            
+        </div>
+
+        </div>
     </body>
-    
 </html>
+
+
+
+

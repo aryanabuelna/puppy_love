@@ -1,25 +1,91 @@
 <!DOCTYPE html>
-<html>
- <head>
-   <meta charset="UTF-8">
-   <title>Puppy Love</title>
-   <link rel="stylesheet" href="style.css">
- </head>
- <body>
-   <img src="images/puppyluv.png" alt="some text" width="300" height="200">
-<div id="header">
-   <h1>About</h1>
-   <!-- Insert your super clever slogan that may or may not have several puns in it -->
- </div>
- <div id="links">
-   <a class="link" href="home.html">Home</a>
-   <a class="link" href="about.html">About</a>
-   <a class="link" href="sign_up.html">Sign Up</a>
- </div>
- <div id="info">
-   <img src="puppyluv.png"
-   <!-- Insert your list of things that make google high school great here -->
-   <!-- Insert an image of google high school here -->
- </div>
- </body>
-</html>
+<HTML>
+    
+    <link rel="stylesheet" href="home.css">    
+    <title>Puppy Love</title>
+    
+    <style>
+     .mySlides {display:none}
+     .w3-left, .w3-right, .w3-badge {cursor:pointer}
+     .w3-badge {height:13px;width:13px;padding:0}
+    </style>
+
+  </HEAD>
+    <BODY>
+      <div class="header">
+        <ul>
+          <img class="logo" src="imgdawg/puppyluv.jpg"  width="160px" height="110px">
+          <li><a class="sign up" href="sign_up.html">Sign Up</a></li>
+          <li><a class="about" href="about.html">About</a></li> 
+          <li><a class="home" href="home.html">Home</a></li>
+        </ul>
+        </div>
+        
+        
+        <center>
+        <h1>About</h1>
+        </center>
+        
+        <br>
+        
+        <div class="color">
+        <p style="background-color: #ffd6a0;">
+          Welcome to Puppy Love, home of the number one puppy play date app.
+        </p>
+        </div>
+        
+        <br>
+		  
+       
+        <div class="w3-content w3-display-container" style="max-width:800px">
+        <img class="mySlides" src="imgdawg/puppyluv.jpg" style="width:100%">
+        <img class="mySlides" src="imgdawg/tacos.jpg" style="width:100%">
+        <img class="mySlides" src="imgdawg/pic.jpg" style="width:100%">
+        <div class="w3-left" onclick="plusDivs(-1)">&#10094;</div>
+        <div class="w3-right" onclick="plusDivs(1)">&#10095;</div>
+        </div>
+       </div>
+
+
+      <script>
+      var slideIndex = 1;
+      showDivs(slideIndex);
+
+      function plusDivs(n) {
+      showDivs(slideIndex += n);
+      }
+
+      function currentDiv(n) {
+      showDivs(slideIndex = n);
+      }  
+
+      function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      if (n > x.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" w3-white", "");
+      }
+      x[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " w3-white";
+      }
+      </script>
+        
+
+       
+        <center>
+       <p>
+        <font size="3" color="black">FOUNDERS</font> <br>
+        <font size="2" color="black">2019 CSSIx</font>
+        </p>
+        </center>
+        
+        
+    </BODY>
+    
+</HTML>

@@ -10,7 +10,7 @@ body{
   
 }
 
-.home{
+.sign_up{
   border-right: 1px solid black;
 }
 
@@ -50,15 +50,5 @@ li a {
 li a:hover {
   background-color: #FFA06F;
 }
-p{
-  text-align:center;
-  font-family: georgia;
-  font-size: 25px
-  
-}
-.color{
-  text-align:center;
-  font-family: georgia;
-  font-size: 35px;
-  background-color: #ffa06f;
-}
+
+
