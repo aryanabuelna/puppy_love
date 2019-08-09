@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <HTML>
+  <HEAD>
     
     <link rel="stylesheet" href="/css/about.css">    
     <title>Puppy Love</title>
+    <link rel="shortcut icon" type="images/jpg" href="images/logo.jpg">
+    <style>
+      body{font-family: verdana, sans-serif;}
+      imgdawg{vertical-align: middle;}
+    </style>
     
     <style>
      .mySlides {display:none}
-     .w3-left, .w3-right, .w3-badge {cursor:pointer}
-     .w3-badge {height:13px;width:13px;padding:0}
+     .w3-left, .w3-right{cursor:pointer}
     </style>
-
-  </HEAD>
-    <BODY>
+​
+ </HEAD>
+  <BODY>
       <div class="header">
         <ul>
-          <img class="logo" src="imgdawg/puppyluv.jpg"  width="160px" height="110px">
-          <li><a class="sign up" href="sign_up.html">Sign Up</a></li>
-          <li><a class="about" href="about.html">About</a></li> 
-          <li><a class="home" href="home.html">Home</a></li>
+          <img class="logo" src="/images/logo.jpg"  width="160px" height="110px">
+          <li><a class="sign up" href="/signup">Sign Up</a></li>
+          <li><a class="about" href="/about">About</a></li> 
+          <li><a class="home" href="/">Home</a></li>
         </ul>
         </div>
         
@@ -32,33 +37,45 @@
         <p style="background-color: #ffd6a0;">
           Welcome to Puppy Love, home of the number one puppy play date app.
         </p>
-        </div>
-        
-        <br>
-		  
        
+       <center>
+        <img src="imgdawg/miss.PNG" style="width:64%">
         <div class="w3-content w3-display-container" style="max-width:800px">
-        <img class="mySlides" src="imgdawg/puppyluv.jpg" style="width:100%">
-        <img class="mySlides" src="imgdawg/tacos.jpg" style="width:100%">
-        <img class="mySlides" src="imgdawg/pic.jpg" style="width:100%">
-        <div class="w3-left" onclick="plusDivs(-1)">&#10094;</div>
-        <div class="w3-right" onclick="plusDivs(1)">&#10095;</div>
+        <img class="mySlides" src="imgdawg/rot.jpg" style="width:100%">
+        <img class="mySlides" src="imgdawg/flower.jpg" style="width:100%">
+        <img class="mySlides" src="imgdawg/cute.jpg" style="width:100%">
+        <img class="mySlides" src="imgdawg/bird.jpg" style="width:50%">
+        <img class="mySlides" src="imgdawg/cat.jpg" style="width:100%">
+        <img class="mySlides" src="imgdawg/hah.png" style="width:100%">
+        <img class="mySlides" src="imgdawg/max.jpg" style="width:100%">
+        <img class="mySlides" src="imgdawg/baby.jpg" style="width:100%">
+        <center>
+        <button class="w3-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-right" onclick="plusDivs(1)">&#10095;</button>
         </div>
-       </div>
-
-
-      <script>
+        <img src="imgdawg/pop.PNG" style="width:64%">
+        
+          <p style="background-color: #ffd6a0;">
+            Create an account today! <br>
+            <img src="imgdawg/aw.jpg">
+          </p>
+        </center>
+        
+        
+        
+        
+       <script>
       var slideIndex = 1;
       showDivs(slideIndex);
-
+​
       function plusDivs(n) {
       showDivs(slideIndex += n);
       }
-
+​
       function currentDiv(n) {
       showDivs(slideIndex = n);
       }  
-
+​
       function showDivs(n) {
       var i;
       var x = document.getElementsByClassName("mySlides");
@@ -75,17 +92,34 @@
       dots[slideIndex-1].className += " w3-white";
       }
       </script>
-        
-
-       
+​
+        <br>
         <center>
        <p>
-        <font size="3" color="black">FOUNDERS</font> <br>
-        <font size="2" color="black">2019 CSSIx</font>
+        <img src="imgdawg/ios.jpg" style="width:100" height="200">
+        <h6 style="background-color: #ffd6a0;">2019 CSSIx</h6>
         </p>
         </center>
+    <div class="footer">
+                <p> 
+                Contact Informtion<br>
+                -----------
+                </p>
+                <a href="https://www.snapchat.com/">
+                <img border="0"  src="../images/sc.png" width="30" height="30">
+                </a>
+​
+                <a href="https://www.instagram.com/">
+                <img border="0"  src="../images/ig.png" width="30" height="30">
+                </a>
+                
+                 <a href="https://support.google.com/mail/answer/56256?hl=en">
+                <img border="0"  src="../images/mail.png" width="30" height="30">
+                </a>
+               
+​
+    </div>
         
-        
-    </BODY>
+  </BODY>
     
 </HTML>

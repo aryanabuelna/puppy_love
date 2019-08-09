@@ -1,19 +1,15 @@
 body{
   background-color:#fefefe;
 }
-
 .header{
     position:fixed;
     width:100%;
     top:0%;
-
   
 }
-
 .home{
   border-right: 1px solid black;
 }
-
 .about{
   border-right: 1px solid black;
 }
@@ -23,21 +19,16 @@ ul {
   padding: 0;
   background-color: #fefefe;
 }
-
-
 .fetch{
     display: block;
     margin-left: auto;
     margin-right: auto;
     
 }
-
-
 li {
   float: right;
   padding: 20px 0px;
 }
-
 li a {
   display: block;
   color: black;
@@ -46,7 +37,6 @@ li a {
   text-decoration: none;
   font-family: georgia;
 }
-
 li a:hover {
   background-color: #FFA06F;
 }
@@ -62,3 +52,12 @@ p{
   font-size: 35px;
   background-color: #ffa06f;
 }
+
+.footer {
+  font-family: georgia;
+  font-size: 25px;
+  text-align:center;
+  width: 100%;
+  background-color:#FFA06F;
+  color: white;
+ }
