@@ -4,87 +4,77 @@
         <link href="https://fonts.googleapis.com/css?family=Georgia&display=swap" rel="stylesheet">
         <style>
         
-        .item1 { grid-area: header; }
-        .item2 { grid-area: img; }
-        .item3 { grid-area: name; }
-        .item4 { grid-area: type; }
-        .item5 { grid-area: bio; }
-        .item6 { grid-area: loc;}
-        .item7 { grid-area: con;}
-        .item8 { grid-area: footer;}
-        
-        
         .grid-container {
           display: grid;
+          /*grid-template-columns: repeat(13, auto);*/
+          /*grid-template-rows: repeat(14, auto);*/
           grid-template-areas:
-          'header header header header header header'
-          'img img name name type type'
-          'img img loc loc con con'
-          'img img bio bio bio bio'
-          'footer footer footer footer footer footer';
+          'h h h h h h h h h h h h h' 
+          'h h h h h h h h h h h h h' 
+          'img img img img img img img . . . . . . '
+          'img img img img img img img . . . . . . '
+          'img img img img img img img name name type type type . '
+          'img img img img img img img loc loc con con . . '
+          'img img img img img img img . . . . . . '
+          'img img img img img img img bio bio bio bio . .'
+          'img img img img img img img bio bio bio bio . .'
+          'img img img img img img img . . . . . . '
+          '. . but but but . . . . . . . . '
+          '. . but but but . . . . . . . . '
+          'footer footer footer footer footer footer footer footer footer footer footer footer footer '
+          'footer footer footer footer footer footer footer footer footer footer footer footer footer ';
           grid-gap: 10px;
-          /*background-color: #2196F3;*/
           padding: 10px;
           padding-top:150px;
         }
-        
-        /*.grid-container > div {*/
-        /*  background-color: rgba(255, 255, 255, 0.8);*/
-        /*  text-align: center;*/
-        /*  padding: 20px 0;*/
-        /*  font-size: 30px;*/
-        /*}*/
-        .item1 {
-                position:fixed;
-                width:100%;
-                top:0%;
+        .header {
+            grid-area: h;
+            position:fixed;
+            width:100%;
+            top:0%;
+            padding:; 30px;
+        }
+        .image {
+            grid-area: img;
             
         }
-        .item3 {
+        .username {
+            grid-area: name;
             font-size: 70px;
             font-family: 'Georgia', sans-serif;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-
+            text-align: center;
         }
-        .item4 {
+        .type {
+            grid-area: type;
             font-size: 70px;
             font-family: 'Georgia', sans-serif;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-
+            text-align: left;
+            padding-left: 115px;
         }
-        .item5 {
+        .bio {
+            grid-area: bio;
             font-size: 40px;
             font-family: 'Georgia', sans-serif;
-            /*border: 1px solid black;*/
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
             padding: 50px;
             text-align: center;
-
         }
-        .item6 {
+        .location {
+            grid-area: loc;
             font-size: 50px;
             font-family: 'Georgia', sans-serif;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-
+            /*display: block;*/
+            /*margin-left: auto;*/
+            /*margin-right: auto;*/
+            text-align: center;
         }
-        .item7 {
+        .contact {
+            grid-area: con;
             font-size: 50px;
             font-family: 'Georgia', sans-serif;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-
+            text-align: left;
         }
-        .item8 {
-            
+        .footer {
+          grid-area: footer;
           left: 10px;
           bottom: 10px;
           width: 100%;
@@ -93,35 +83,28 @@
           left: 0;
           bottom: 0;
           width: 100%;
-          
         }
         .cactusimg {
-              display: block;
-              margin-left: auto;
-              margin-right: auto;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
         }
-        
         .home{
           border-right: 1px solid black;
         }
-        
         .about{
           border-right: 1px solid black;
-         
         }
-        
         ul {
-              list-style-type: none;
-              margin: 0;
-              padding: 0;
-              background-color: #fefefe;
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          background-color: #fefefe;
         }
-        
         li {
           float: right;
           padding: 20px 0px;
         }
-        
         li a {
           display: block;
           color: black;
@@ -130,18 +113,37 @@
           text-decoration: none;
           font-family: georgia;
         }
-        
         li a:hover {
           background-color: #FFA06F;
         }
-        
-        .buttonss {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+        .button1{
+            grid-area: but;
+            display:grid;
             padding:20px;
+            background-color: #FFA06F; 
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 4px 1px;
+            cursor: pointer;
+            border-radius: 50%;
         }
-       
+        #outside {
+            display:grid;
+            padding:10px;
+            background-color: #FFA06F; 
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 4px 1px;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
         </style>
                 
         
@@ -151,7 +153,7 @@
     </head>
     <body>
         <div class="grid-container">
-            <div class="item1">
+            <div class="header">
                 <ul>
                 <img class="logo" src="images/logo.jpg" width="170PX">
                   <li><a class="sign_up" href="/signup">Sign Up </a></li>
@@ -160,38 +162,42 @@
                 </ul>
             </div>
             
-            <div class="item2">
+            <div class="image">
                 <img class="cactusimg" src="{{img_pic}}" width="300px" height="300px">
             </div>
             
-            <div class="item3">
+            <div class="username">
                 {{username}}
             </div>
             
-            <div class="item4">
+            <div class="type">
                 {{t_o_animal}}
             </div>
             
-            <div class="item5">
+            <div class="bio">
                 {{_bio_}}
             </div>
             
-            <div class="item6">
+            <div class="location">
                 {{place}}
             </div>
             
-            <div class="item7">
+            <div class="contact">
                 {{contacting}}
             </div>
             
-            <div class="item8">
+            <div id="outside"class='button1'> 
                 <form method=GET action="/search">
-                <input class='buttonss' type='submit' value="Fetch Your Match!">
+                    <center><input  class='button1' type='submit' value="Fetch Your Match!"></center>
                 </form>
             </div>
             
+            <div class="footer">
+                th
+            </div>
+            
         </div>
-
+​
         </div>
     </body>
 </html>
