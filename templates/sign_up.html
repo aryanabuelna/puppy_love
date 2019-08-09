@@ -2,43 +2,77 @@
 <html>
   
     <head>
+        <link type="text/css" rel="stylesheet" href="../css/sign_up.css">
+​
         <title>Create Profile</title>
     </head>
     
     <body>
-
-        <form method=POST action= "/results">
-            Pet Name: <br>
-            <input type="text" name="user_pet_name" value="Pet Name Here">
+        <div class="container">
+        <div class="header">
+            <ul>
+            <img class="logo" src="../images/logo.jpg" width="170PX">
+              <li><a href="/signup">Sign Up </a></li>
+              <li><a class="about" href="/about">About</a></li>
+              <li><a href="/">Home</a></li>
+​
+            </ul>
+        </div>        
+        <h1 class="title">
+            Creat Your<br>
+            Own Profile!!
+        </h1>
+    
+        <form class="SU" method=POST action= "/results">
+            <h4 class="pet_name">Pet Name: <br></h4>
+            <input class="nombre"type="text" name="user_pet_name" value="Pet Name Here">
+            
+            
             <br>
-            Animal Type / Profile Pic: <br>
-            <select name="animal-type">
+            
+            
+            <h4 class="tipo">Animal Type / Profile Pic: <br></h4>
+            <select class="type"name="animal-type">
                 <option value="dog">Dog</option>
                 <option value="cat">Cat</option>
                 <option value="bird">Bird</option>
                 <option value="small_pet">Small Pet</option>
                 <option value="reptile">Reptile</option>
             </select>
+            
+            
             <br>
-            Location: <br>
-            <select name="city_location">
+            
+            
+            <h4 class="loca">Location: <br></h4>
+            <select class="location"name="city_location">
                 <option value="Salinas">Salinas</option>
                 <option value="Marina">Marina</option>
                 <option value="Seaside">Seaside</option>
                 <option value="Sand City">Sand City</option>
                 <option value="Monterey">Monterey</option>
             </select>
-            <br>
-            Contact Info: <br>
-            <input type="text" name="user_contact_info" value="Contact Info Here">
-            <br>
-            Bio: <br>
-            <input type="text" name="user_bio" value="Description Here">
+            
+            
             <br>
             
-            <input type="submit" value="Create Profile!">
+            
+            
+            <h4 class="contact">Contact Info: <br></h4>
+            <input class="info"type="text" name="user_contact_info" value="Contact Info Here">
+            <br>
+            
+            
+            <h4 class="B">Bio: <br></h4>
+            <input class="bio"type="text" name="user_bio" value="Description Here">
+            
+            
+            <br>
+            
+            <input class="button"type="submit" value="Create Profile!">
             
         </form>
+        </div>
     </body>
     
 </html>

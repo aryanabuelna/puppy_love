@@ -1,0 +1,108 @@
+body{
+    background-color:#fefefe; 
+}
+.container{
+  display: grid;
+  
+  
+  
+  
+  
+  grid-templates-columns: auto auto auto auto;
+  grid-templates-rows: 1fr 1fr;
+  grid-template-areas:  "h h h h"
+                        "ti ti su su";
+  
+}
+.SU{
+  display: grid;
+  grid-area: su;
+}
+.title{
+  display: grid;
+  grid-area: ti;
+}
+.header{
+  width:100%;
+  top:0%;
+  display:grid;
+  grid-area: h;
+}
+/*.pet_name{*/
+/*  display:grid;*/
+/*  grid-area:pn;*/
+/*}*/
+/*.nombre{*/
+/*  display: grid;*/
+/*  grid-area:N;*/
+/*}*/
+/*.tipo{*/
+/*  display: grid;*/
+/*  grid-area:T;*/
+/*}*/
+/*.type{*/
+/*  display: grid;*/
+/*  grid-area:TY;*/
+/*}*/
+/*.loca{*/
+/*  display: grid;*/
+/*  grid-area:L;*/
+/*}*/
+/*.location{*/
+/*  display: grid;*/
+/*  grid-area:LO;*/
+/*}*/
+/*.contact{*/
+/*  display: grid;*/
+/*  grid-area:C;*/
+/*}*/
+/*.info{*/
+/*  display: grid;*/
+/*  grid-area:IN;*/
+/*}*/
+/*.B{*/
+/*  display: grid;*/
+/*  grid-area:B;*/
+/*}*/
+/*.bio{*/
+/*  display: grid;*/
+/*  grid-area:BI;*/
+/*}*/
+/*.button{*/
+/*  display: grid;*/
+/*  grid-area:BU;*/
+/*}*/
+.about{
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #fefefe;
+}
+.fetch{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+    
+}
+li {
+  float: right;
+  padding: 20px 0px;
+}
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 5px 16px;
+  text-decoration: none;
+  font-family: georgia;
+}
+li a:hover {
+  background-color: #FFA06F;
+}
+.pet_name{
+    background-color: purple 
+}
