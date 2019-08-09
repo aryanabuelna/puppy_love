@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link href="https://fonts.googleapis.com/css?family=Georgia&display=swap" rel="stylesheet">
         <style>
         
         .item1 { grid-area: header; }
@@ -39,12 +40,59 @@
                 top:0%;
             
         }
+        .item3 {
+            font-size: 70px;
+            font-family: 'Georgia', sans-serif;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+        .item4 {
+            font-size: 70px;
+            font-family: 'Georgia', sans-serif;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+        .item5 {
+            font-size: 40px;
+            font-family: 'Georgia', sans-serif;
+            /*border: 1px solid black;*/
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 50px;
+            text-align: center;
+
+        }
+        .item6 {
+            font-size: 50px;
+            font-family: 'Georgia', sans-serif;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+        .item7 {
+            font-size: 50px;
+            font-family: 'Georgia', sans-serif;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
         .item8 {
             
           left: 10px;
           bottom: 10px;
           width: 100%;
           background-color:#FFA06F;
+          position: fixed;
+          left: 0;
+          bottom: 0;
+          width: 100%;
           
         }
         .cactusimg {
@@ -91,6 +139,7 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
+            padding:20px;
         }
        
         </style>
@@ -112,7 +161,7 @@
             </div>
             
             <div class="item2">
-                <img class="cactusimg" src="images/Cactus.png" width="300px" height="300px">
+                <img class="cactusimg" src="{{img_pic}}" width="300px" height="300px">
             </div>
             
             <div class="item3">
@@ -124,7 +173,7 @@
             </div>
             
             <div class="item5">
-                {{bio}}
+                {{_bio_}}
             </div>
             
             <div class="item6">
@@ -136,7 +185,9 @@
             </div>
             
             <div class="item8">
+                <form method=GET action="/search">
                 <input class='buttonss' type='submit' value="Fetch Your Match!">
+                </form>
             </div>
             
         </div>
