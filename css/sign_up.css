@@ -11,12 +11,13 @@ body{
   grid-templates-columns: auto auto auto auto;
   grid-templates-rows: 1fr 1fr;
   grid-template-areas:  "h h h h"
-                        "ti ti su su";
+                        "ti su su .";
   
 }
 .SU{
   display: grid;
   grid-area: su;
+  text-align:center;
 }
 .title{
   display: grid;
@@ -29,49 +30,22 @@ body{
   grid-area: h;
 }
 /*.pet_name{*/
-/*  display:grid;*/
-/*  grid-area:pn;*/
 /*}*/
-/*.nombre{*/
-/*  display: grid;*/
-/*  grid-area:N;*/
-/*}*/
-/*.tipo{*/
-/*  display: grid;*/
-/*  grid-area:T;*/
-/*}*/
-/*.type{*/
-/*  display: grid;*/
-/*  grid-area:TY;*/
-/*}*/
-/*.loca{*/
-/*  display: grid;*/
-/*  grid-area:L;*/
-/*}*/
-/*.location{*/
-/*  display: grid;*/
-/*  grid-area:LO;*/
-/*}*/
-/*.contact{*/
-/*  display: grid;*/
-/*  grid-area:C;*/
-/*}*/
-/*.info{*/
-/*  display: grid;*/
-/*  grid-area:IN;*/
-/*}*/
-/*.B{*/
-/*  display: grid;*/
-/*  grid-area:B;*/
-/*}*/
-/*.bio{*/
-/*  display: grid;*/
-/*  grid-area:BI;*/
-/*}*/
-/*.button{*/
-/*  display: grid;*/
-/*  grid-area:BU;*/
-/*}*/
+.nombre{
+border-radius:10px;
+}
+.type{
+border-radius:10px;
+}
+.info{
+  border-radius:10px;
+}
+.B{
+  justify-content:center;
+}
+.bio{
+  border-radius:10px;
+}
 .about{
   border-right: 1px solid black;
   border-left: 1px solid black;
@@ -103,6 +77,24 @@ li a {
 li a:hover {
   background-color: #FFA06F;
 }
-.pet_name{
-    background-color: purple 
-}
+.button{
+  padding:20px;
+  background-color: #FFA06F; 
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 1px;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+  
+.footer {
+  font-family: georgia;
+  font-size: 25px;
+  text-align:center;
+  width: 100%;
+  background-color:#FFA06F;
+  color: white;
+  }
