@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <style>
+            .btn1 {
+                  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+            }
+            .btn2:hover {
+                  background-color: #FFA06F; /* Green */
+  color: white;
+            }
+        </style>
+
+
         <title>Profile Search</title>
         
         <link rel = "stylesheet" href = "/css/all_profiles.css">
@@ -22,13 +34,14 @@
     {% for profile in all_profiles %}
     
         <div class="user_profile">
-          <img src="{{profile.p_pic}}" width = "50%" ></img>
+          <img src="{{profile.p_pic}}" width = "30%" ></img>
           <h1 id="pet_name">{{profile.pet_name}}</h1>
           <h2>{{profile.a_typel}}</h2>
           <h3>{{profile.location}}</h3>
-          <!--<h3>{{profile.contact_info}}</h3>-->
-          <!--<h4>{{profile.bio}}</h4>-->
-            
+          <form>
+              <input class = 'btn1 btn2' type="submit" value="Catch!">
+          </form>
+
           
         </div>
         
